@@ -1,17 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
+import CalendarPage from './pages/calendar';
+import Settings from './pages/settings';
+import { ThemeProvider } from './context/themeContext';
+import { JournalProvider } from './context/journalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <CalendarPage />
+      },
+      {
+        path: "/summary",
+        element: <h1>Summary</h1>
+      },
+      {
+        path: "/marketplace",
+        element: <h1>Marketplace</h1>
+      },
+      {
+        path: "/settings",
+        element: <Settings />
+      },
+    ]
+  },
+]);
+
+root.render(
+  <>
+    <ThemeProvider>
+      <JournalProvider>
+        <RouterProvider router={router} />
+      </JournalProvider>
+    </ThemeProvider>
+  </>
+);

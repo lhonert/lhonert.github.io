@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+:root {
+
+    --manang1-text: #413c58;
+    --manang1-primary: #a3c4bc;
+    --manang1-secondary: #bfd7b5;
+    --manang1-tertiary: #e7efc5;
+    --manang1-background: #f2e7c9;
+
+    --manong1-text: #15161b;
+    --manong1-primary: #c7866a;
+    --manong1-secondary: #4f5d75;
+    --manong1-tertiary: #bfc0c0;
+    --manong1-background: #eee;
+
+    --boyey1-text: #270722;
+    --boyey1-primary: #ecce8e;
+    --boyey1-secondary: #dbcf96;
+    --boyey1-tertiary: #c2c6a7;
+    --boyey1-background: #9ac2c5;
+
+    --beby1-text: #6b5e62;
+    --beby1-primary: #e9a9b4;
+    --beby1-secondary: #eebb5d;
+    --beby1-tertiary: #e4eaf7;
+    --beby1-background: #eae7ec;
+
+    --text: var(--beby1-text);
+    --primary: var(--beby1-primary);
+    --secondary: var(--beby1-secondary);
+    --tertiary: var(--beby1-tertiary);
+    --background: var(--beby1-background);
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.outline {
+    outline: 1px solid var(--text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.no-outline {
+    box-shadow: 3px 5px 6px -4px rgba(0,0,0,0.1)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p, a, span, h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
 }
 
-.App-link {
-  color: #61dafb;
+input {
+    width:40px;
+    height:40px;
+    margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html, body {
+    background: var(--background);
+}
+
+.header {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header path {
+    stroke: var(--text);
+}
+
+.footer .nav svg {
+    fill: var(--text);
+    stroke: var(--text);
+}
+
+.footer .nav.active svg {
+    fill: var(--tertiary);
+    stroke: var(--tertiary);
+}
+
+.footer {
+    padding: 1em 0;
+    background-color: var(--primary);
+    position: fixed;
+    height:35px;
+    width: 100%;
+    bottom: 0;
+    z-index:999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .addNew {
+    background: var(--secondary);
+    padding: 1.2em;
+    border-radius: 50%;
+    position: relative;
+    bottom: 20px;
+}
+
+.main-container {
+    padding: 1em;
+}
+
+.entry {
+    display: flex;
+    padding: 1em 1em 1em 0.5em;
+    gap: 5px;
+}
+
+.entry h2 {
+    margin-top:0;
+}
+
+.entry sub {
+    text-transform: uppercase;
+}
+
+.entry .side {
+    width: 100%;
+    flex: 5%;
+}
+
+.entry .content {
+    flex: 95%;
+}
+
+.entry .icon {
+    background: var(--primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.entry:not(:last-child) .line {
+    width: 1px;
+    background: var(--primary);
+    height: calc(100% - 37px);
+    margin: 0 auto;
+}
+
+.entry:not(:last-child) .line.outline {
+    background: var(--text);
+}
+
+.entry .timestamp {
+    opacity: 0.3;
+    font-style: italic;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.item-card {
+    margin: 0.5em 0;
+    border-radius: 10px;
+    background: var(--tertiary);
+}
+
+.react-calendar {
+    border:unset !important;
+    width: unset !important;
+    font-family: 'Quicksand', sans-serif !important;
+    background-color: unset !important;
+}
+
+.react-calendar__tile--now {
+    background: var(--secondary) !important;
+    color: var(--text) !important;
+    border-radius:10px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: var(--text) !important;
 }
