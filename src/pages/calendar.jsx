@@ -1,9 +1,8 @@
-import Calendar from "react-calendar"
-import Entry from "../components/entry"
-import { useTheme } from "../context/themeContext";
-import { useJournal } from "../context/journalContext";
-import Moment from "react-moment";
 import moment from "moment";
+import Calendar from "react-calendar";
+import Entry from "../components/entry";
+import { useJournal } from "../context/journalContext";
+import { useTheme } from "../context/themeContext";
 
 const CalendarPage = () => {
 
@@ -35,11 +34,6 @@ const CalendarPage = () => {
             <p onClick={() => addJournalEntry(newEntry)}>new entry</p>
 
             {Object.entries(group).map(item => {
-
-                console.log(moment(item[0]).format('MMM DD'))
-                console.log(moment(item[0]).format('hh:mm A'))
-
-                // const date = moment(item[0]).format('MMM DD')
 
                 return (
                     <>

@@ -1,8 +1,9 @@
+import moment from "moment";
 import { useTheme } from "../../context/themeContext";
 
 const Entry = (data) => {
 
-    const { title, subtitle, notes, time } = data.data;
+    const { title, subtitle, notes, date } = data.data;
     const { outline } = useTheme()
 
     return (
@@ -19,7 +20,7 @@ const Entry = (data) => {
                 {notes.map(note => {
                     return <p>{note}</p>
                 })}
-                <p className='timestamp'>{time}</p>
+                <p className='timestamp'>{moment(date).format('hh:mm A')}</p>
             </div>
 
         </div>
