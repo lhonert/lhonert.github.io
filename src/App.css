@@ -44,10 +44,39 @@ p, a, span, h1, h2, h3, h4, h5, h6 {
     color: var(--text);
 }
 
-input {
+input[type='checkbox'], input[type='radio'] {
     width:40px;
     height:40px;
     margin: 10px;
+}
+
+input[type="text"], textarea {
+    padding: 1em;
+    width: -webkit-fill-available;
+    margin: 5px 0;
+    border-radius: 20px;
+    border: unset;
+    font-family: 'Quicksand', sans-serif;
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: var(--primary) auto 1px;
+}
+
+textarea {
+    height:100px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    font-family: 'Quicksand', sans-serif;
+    padding: 1em;
+    border: unset;
+    margin: 1em 0;
+    font-size: 18px;
+    border-radius: 20px;
 }
 
 html, body {
@@ -105,8 +134,18 @@ html, body {
     gap: 5px;
 }
 
-.entry h2 {
-    margin-top:0;
+.entry .title-container {
+    margin-top:10px;
+}
+
+.entry .title-container p {
+    margin: 0;
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.entry .title-container h2 {
+    margin: 0;
 }
 
 .entry sub {
@@ -153,7 +192,7 @@ html, body {
 
 .item-card {
     margin: 0.5em 0;
-    border-radius: 10px;
+    border-radius: 20px;
     background: var(--tertiary);
 }
 
@@ -167,9 +206,21 @@ html, body {
 .react-calendar__tile--now {
     background: var(--secondary) !important;
     color: var(--text) !important;
-    border-radius:10px;
+    border-radius:20px;
+}
+
+.react-calendar__viewContainer abbr {
+    color: var(--text);
+}
+
+.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background: var(--primary)
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    opacity: 0.5;
 }
 
 .react-calendar__month-view__days__day--weekend {
-    color: var(--text) !important;
+    color: inherit !important;
 }

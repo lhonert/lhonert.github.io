@@ -7,7 +7,7 @@ import { useTheme } from "../context/themeContext";
 const CalendarPage = () => {
 
     const { outline } = useTheme(),
-        { journalEntries, addJournalEntry } = useJournal();
+        { journalEntries } = useJournal();
 
     const group = journalEntries.reduce((group, entry) => {
         const date = moment(entry.date).format('MMM DD');
@@ -18,20 +18,9 @@ const CalendarPage = () => {
         return group;
     }, {});
 
-    const newEntry = {
-        'title': 'Test',
-        'subtitle': 'Omoide Trigger 5th Anniversary',
-        'notes': [
-            "Last night, I had the most vivid dream. I was exploring a huge, ancient castle filled with hidden passageways and secret rooms."
-        ],
-        'date': '2024-12-25T11:00:00.000Z'
-    }
-
     return (
         <>
             <Calendar />
-
-            <p onClick={() => addJournalEntry(newEntry)}>new entry</p>
 
             {Object.entries(group).map(item => {
 

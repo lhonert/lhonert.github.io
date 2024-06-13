@@ -10,6 +10,7 @@ import CalendarPage from './pages/calendar';
 import Settings from './pages/settings';
 import { ThemeProvider } from './context/themeContext';
 import { JournalProvider } from './context/journalContext';
+import NewEntry from './pages/add-new-entry';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "/settings",
         element: <Settings />
       },
+      {
+        path: "/new",
+        element: <NewEntry />
+      }
     ]
   },
 ]);

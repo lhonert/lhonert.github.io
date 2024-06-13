@@ -6,7 +6,7 @@ export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('beby');
-  const [outline, setOutline] = useState(false);
+  const [outline, setOutline] = useState(true);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, outline, setOutline }}>

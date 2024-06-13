@@ -15,8 +15,10 @@ const Entry = (data) => {
             </div>
 
             <div className='content'>
-                <sub>{title ? subtitle : ''}</sub>
-                <h2>{title ? title : subtitle }</h2>
+                <div className='title-container'>
+                    <p>{title ? subtitle : ''}</p>
+                    <h2>{title ? title : subtitle}</h2>
+                </div>
                 {notes.map(note => {
                     return <p>{note}</p>
                 })}

@@ -20,7 +20,9 @@ const Footer = () => {
                     <Report />
                 </Link></div>
             <div className={`nav addNew ${outline ? 'outline' : 'no-outline'}`}>
-                <Plus />
+                <Link to={'/new'}>
+                    <Plus />
+                </Link>
             </div>
             <div className={`nav ${current.pathname === '/marketplace' ? 'active' : ''}`}>
                 <Link to={'/marketplace'}>
