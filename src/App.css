@@ -196,6 +196,8 @@ html, body {
     background: var(--tertiary);
 }
 
+/* REACT CALENDAR */
+
 .react-calendar {
     border:unset !important;
     width: unset !important;
@@ -223,4 +225,10 @@ html, body {
 
 .react-calendar__month-view__days__day--weekend {
     color: inherit !important;
+}
+
+/* WYSIWYG */
+
+.ce-popover {
+    bottom: 4.5em;
 }
