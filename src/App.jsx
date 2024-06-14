@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import './App.css';
 import Footer from './components/footer';
 import Header from './components/header';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Outlet />
       </div>
       <Footer />
+      <Toaster />
     </div>
   );
 }

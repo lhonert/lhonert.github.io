@@ -235,6 +235,10 @@ html, body {
 
 /* WYSIWYG */
 
+#Editor div {
+    color: var(--text)
+}
+
 .ce-popover {
     bottom: 4.5em;
 }

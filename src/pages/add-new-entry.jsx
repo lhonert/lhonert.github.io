@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 import Header from '@editorjs/header';
 import SimpleImage from "@editorjs/simple-image";
+import toast from "react-hot-toast";
 
 const NewEntry = () => {
 
@@ -31,8 +32,9 @@ const NewEntry = () => {
                     time: moment(output.time).toISOString(),
                     createdAt: moment(output.time).toISOString()
                 };
-        
+
                 addJournalEntry(data);
+                toast.success('Created a journal entry!')
                 navigate('/');
 
             }).catch((error) => {
@@ -47,10 +49,13 @@ const NewEntry = () => {
     return (
         <>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <h1>{moment().format('MMM DD')}</h1>
+                <div>
+                    <p style={{ margin: 0 }}>Today</p>
+                    <h2 style={{ margin: 0 }}>{moment().format('MMMM DD, YYYY')}</h2>
+                </div>
                 <button id='submit' style={{ flex: '0 1 30%' }}>Save</button>
             </div>
-            <hr />
+
             <div id='Editor'></div>
         </>
     )
