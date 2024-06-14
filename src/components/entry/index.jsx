@@ -34,7 +34,7 @@ const Entry = (data) => {
                     blockDiv.appendChild(createElement('p', block.data.text));
                     break;
                 case 'image':
-                    const img = createElement('img', '', { src: block.data.file.url, alt: block.data.caption, class: 'entry-image' });
+                    const img = createElement('img', '', { src: block.data.url, alt: block.data.caption, class: 'entry-image' });
                     blockDiv.appendChild(img);
                     break;
                 default:

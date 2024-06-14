@@ -11,14 +11,12 @@ const CalendarPage = () => {
 
     const group = journalEntries.reduce((group, entry) => {
 
-        entry.map(e => {
-            const date = moment.unix(e.time).utc().format('MMM DD');
-    
-            if (!group[date]) {
-                group[date] = [];
-            }
-            group[date].push(e);
-        })
+        const date = moment.unix(entry.createdAt).utc().format('MMM DD');
+
+        if (!group[date]) {
+            group[date] = [];
+        }
+        group[date].push(entry);
 
         return group;
     }, {});
@@ -27,7 +25,6 @@ const CalendarPage = () => {
     return (
         <>
             <Calendar />
-
 
             {Object.entries(group).map(item => {
 

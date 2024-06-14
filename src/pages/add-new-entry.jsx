@@ -13,20 +13,6 @@ const NewEntry = () => {
     const { addJournalEntry } = useJournal(),
         navigate = useNavigate();
 
-    const addNewEntry = (e) => {
-        e.preventDefault()
-
-        const data = {
-            title: e.target.title.value,
-            subtitle: e.target.title.value,
-            notes: e.target.notes.value.split('\n').filter(el => el),
-            date: moment().toISOString()
-        }
-
-        addJournalEntry(data);
-        navigate('/');
-    }
-
     useEffect(() => {
         const editor = new EditorJS({
             holder: 'Editor',
@@ -39,7 +25,13 @@ const NewEntry = () => {
         function SaveEntry() {
             editor.save().then((output) => {
 
-                console.log(output)
+                let data = output;
+
+                data.id = Math.random()
+                data.createdAt = output.time
+        
+                addJournalEntry(data);
+                navigate('/');
 
             }).catch((error) => {
                 console.log('Saving failed: ', error)
