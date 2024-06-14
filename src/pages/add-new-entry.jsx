@@ -17,6 +17,7 @@ const NewEntry = () => {
     useEffect(() => {
         const editor = new EditorJS({
             holder: 'Editor',
+            placeholder: 'How was your day?',
             tools: {
                 header: { class: Header },
                 image: { class: SimpleImage }
