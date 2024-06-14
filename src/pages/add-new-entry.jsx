@@ -7,7 +7,6 @@ import EditorJS from '@editorjs/editorjs';
 import { useEffect } from "react";
 
 import Header from '@editorjs/header';
-import Quote from '@editorjs/quote';
 import SimpleImage from "@editorjs/simple-image";
 
 const NewEntry = () => {
