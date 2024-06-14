@@ -24,8 +24,9 @@ const Entry = (data) => {
 
         const blockDiv = document.createElement('div');
         let innerHtmlContent = '';
-        
+
         // NOTE: DO NOT USE IN PRODUCTION. Or sanitize/purify html or find another method to render rich text formatting
+        // However, Editor.js has already probably done it anyway
         entry.blocks.forEach(block => {
             switch (block.type) {
                 case 'header':
@@ -41,15 +42,15 @@ const Entry = (data) => {
                     innerHtmlContent += `<div>Unsupported block type: ${block.type}</div>`;
             }
         });
-        
+
         // Add the timestamp
         innerHtmlContent += `<div class="timestamp">${createdAt.format('hh:mm A')}</div>`;
-        
+
         // Set the innerHTML
         blockDiv.innerHTML = innerHtmlContent;
-        
+
         // Append to the container
-        blocksContainer.appendChild(blockDiv);        
+        blocksContainer.appendChild(blockDiv);
 
     }
 
@@ -60,15 +61,8 @@ const Entry = (data) => {
     }, [])
 
     return (
-        <div className='entry'>
-
-            <div className='side'>
-                <div className={`icon ${outline ? 'outline' : 'no-outline'}`}></div>
-                <div className='line' style={outline ? { background: 'var(--text)' } : {}}></div>
-            </div>
-
+        <div className={`item-card entry ${outline ? 'outline' : 'no-outline'}`}>
             <div id={`${entry.id}-${createdAt.format('MMM-DD')}`} className='content'></div>
-
         </div>
     )
 

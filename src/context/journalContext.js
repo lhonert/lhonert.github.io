@@ -38,7 +38,7 @@ const data = [
       {
         "type": "paragraph",
         "data": {
-          "text": "July 25 was a rainy day. The skies were overcast, and gentle raindrops pattered against the windowpanes."
+          "text": "June 12 was a rainy day. The skies were overcast, and gentle raindrops pattered against the windowpanes."
         }
       },
       {

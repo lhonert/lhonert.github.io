@@ -17,9 +17,23 @@ const NewEntry = () => {
     useEffect(() => {
         const editor = new EditorJS({
             holder: 'Editor',
-            placeholder: 'How was your day?',
+            data: {
+                blocks: [
+                    {
+                        type: 'header',
+                        data: {
+                            level: 2
+                        },
+                    }
+                ],
+            },
             tools: {
-                header: { class: Header },
+                header: {
+                    class: Header,
+                    config: {
+                        placeholder: "What's on your mind?"
+                    }
+                },
                 image: { class: SimpleImage }
             }
         });

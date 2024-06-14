@@ -33,12 +33,11 @@ const CalendarPage = () => {
 
                 return (
                     <>
-                        <h2>{date}</h2>
-                        <div className={`item-card ${outline ? 'outline' : 'no-outline'}`}>
-                            {entries.map(entry => {
-                                return <Entry data={entry} />
-                            })}
-                        </div>
+                        <h2 className="date">{date}</h2>
+                        {entries.map(entry => {
+                            return <Entry data={entry} />
+                        })}
+
                     </>
                 )
             })}

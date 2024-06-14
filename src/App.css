@@ -130,9 +130,26 @@ html, body {
     margin-bottom: 5em;
 }
 
+h2.date {
+    position: relative;
+    margin-left: 0.5em;
+    margin-top:2em;
+}
+
+h2.date::after {
+    content: '';
+    width: 30px;
+    height: 5px;
+    background: var(--primary);
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    mix-blend-mode: multiply;
+}
+
 .entry {
     display: flex;
-    padding: 1em 1em 1em 0.5em;
+    padding: 1em;
     gap: 5px;
 }
 
