@@ -25,10 +25,12 @@ const NewEntry = () => {
         function SaveEntry() {
             editor.save().then((output) => {
 
-                let data = output;
-
-                data.id = Math.random()
-                data.createdAt = output.time
+                let data = {
+                    id: Math.random(),
+                    blocks: output.blocks,
+                    time: moment(output.time).toISOString(),
+                    createdAt: moment(output.time).toISOString()
+                };
         
                 addJournalEntry(data);
                 navigate('/');

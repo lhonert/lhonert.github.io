@@ -6,7 +6,7 @@ const JournalContext = createContext();
 const data = [
   {
     "id": "1e9d2e2d-4b5a-4a0a-9570-0c15d07f08ea",
-    "time": 1723238000,
+    "time": '2024-06-12T09:00:00.000Z',
     "blocks": [
       {
         "type": "header",
@@ -22,11 +22,11 @@ const data = [
         }
       }
     ],
-    "createdAt": 1723238000
+    "createdAt": '2024-06-12T09:00:00.000Z'
   },
   {
     "id": "4e5f3d2d-7b8a-4c1a-8580-2e35d09f0b1f",
-    "time": 1728268800,
+    "time": '2024-06-11T18:00:00.000Z',
     "blocks": [
       {
         "type": "header",
@@ -101,11 +101,11 @@ const data = [
         }
       }
     ],
-    "createdAt": 1728268800
+    "createdAt": '2024-06-11T18:00:00.000Z'
   },
   {
     "id": "2c3e9e2d-3a4c-4b0b-9470-0d15e07f09eb",
-    "time": 1720128000,
+    "time": '2024-06-11T00:45:00.000Z',
     "blocks": [
       {
         "type": "header",
@@ -121,12 +121,12 @@ const data = [
         }
       }
     ],
-    "createdAt": 1720128000
+    "createdAt": '2024-06-11T00:45:00.000Z'
   }
 ];
 
 const sorted = data.sort(function (a, b) {
-  return moment(-a.time).toISOString().localeCompare(moment(b.time).toISOString())
+  return -a.time.localeCompare(b.time)
 })
 
 export const useJournal = () => useContext(JournalContext);
@@ -140,7 +140,7 @@ export const JournalProvider = ({ children }) => {
       const newData = [...prevEntries, newEntry];
 
       return newData.sort(function (a, b) {
-        return moment(-a.time).toISOString().localeCompare(moment(b.time).toISOString())
+        return -a.time.localeCompare(b.time)
       })
 
     });

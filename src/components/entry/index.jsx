@@ -22,33 +22,38 @@ const Entry = (data) => {
         const blocksContainer = document.getElementById(`${entry.id}-${createdAt.format('MMM-DD')}`);
         blocksContainer.innerHTML = '';
 
-        const blockDiv = createElement('div');
-
+        const blockDiv = document.createElement('div');
+        let innerHtmlContent = '';
+        
+        // NOTE: DO NOT USE IN PRODUCTION. Or sanitize/purify html or find another method to render rich text formatting
         entry.blocks.forEach(block => {
-
             switch (block.type) {
                 case 'header':
-                    blockDiv.appendChild(createElement(`h${block.data.level}`, block.data.text));
+                    innerHtmlContent += `<h${block.data.level}>${block.data.text}</h${block.data.level}>`;
                     break;
                 case 'paragraph':
-                    blockDiv.appendChild(createElement('p', block.data.text));
+                    innerHtmlContent += `<p>${block.data.text}</p>`;
                     break;
                 case 'image':
-                    const img = createElement('img', '', { src: block.data.url, alt: block.data.caption, class: 'entry-image' });
-                    blockDiv.appendChild(img);
+                    innerHtmlContent += `<img src="${block.data.url}" alt="${block.data.caption}" class="entry-image">`;
                     break;
                 default:
-                    blockDiv.appendChild(createElement('div', `Unsupported block type: ${block.type}`));
+                    innerHtmlContent += `<div>Unsupported block type: ${block.type}</div>`;
             }
-
-            blocksContainer.appendChild(blockDiv);
         });
-
-        blockDiv.appendChild(createElement('div', createdAt.format('HH:mm A'), {class: 'timestamp'}))
+        
+        // Add the timestamp
+        innerHtmlContent += `<div class="timestamp">${createdAt.format('hh:mm A')}</div>`;
+        
+        // Set the innerHTML
+        blockDiv.innerHTML = innerHtmlContent;
+        
+        // Append to the container
+        blocksContainer.appendChild(blockDiv);        
 
     }
 
-    const createdAt = moment.unix(entry.createdAt).utc()
+    const createdAt = moment(entry.createdAt)
 
     useEffect(() => {
         renderBlocks();
