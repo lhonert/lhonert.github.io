@@ -134,22 +134,14 @@ html, body {
     gap: 5px;
 }
 
-.entry .title-container {
-    margin-top:10px;
-}
-
-.entry .title-container p {
-    margin: 0;
-    font-size: 90%;
-    text-transform: uppercase;
-}
-
-.entry .title-container h2 {
-    margin: 0;
-}
-
-.entry sub {
-    text-transform: uppercase;
+.entry h1, 
+.entry h2, 
+.entry h3, 
+.entry h4, 
+.entry h5, 
+.entry h6,
+.entry p {
+    margin: 10px 0
 }
 
 .entry .side {
@@ -159,6 +151,7 @@ html, body {
 
 .entry .content {
     flex: 95%;
+    max-width: 100%;
 }
 
 .entry .icon {
@@ -183,6 +176,11 @@ html, body {
 .entry .timestamp {
     opacity: 0.3;
     font-style: italic;
+}
+
+.entry-image {
+    width: 100%;
+    border-radius: 20px;
 }
 
 .flex {

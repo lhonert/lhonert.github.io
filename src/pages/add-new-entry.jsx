@@ -1,7 +1,6 @@
-import moment from "moment"
-import { useTheme } from "../context/themeContext"
-import { useJournal } from "../context/journalContext";
+import moment from "moment";
 import { useNavigate } from "react-router";
+import { useJournal } from "../context/journalContext";
 
 import EditorJS from '@editorjs/editorjs';
 import { useEffect } from "react";
@@ -11,8 +10,7 @@ import SimpleImage from "@editorjs/simple-image";
 
 const NewEntry = () => {
 
-    const { outline } = useTheme(),
-        { addJournalEntry } = useJournal(),
+    const { addJournalEntry } = useJournal(),
         navigate = useNavigate();
 
     const addNewEntry = (e) => {
