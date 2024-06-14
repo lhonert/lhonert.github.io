@@ -71,6 +71,7 @@ textarea {
 button {
     width: 100%;
     background: var(--primary);
+    color: var(--text);
     font-family: 'Quicksand', sans-serif;
     padding: 1em;
     border: unset;
@@ -231,6 +232,11 @@ html, body {
 
 .react-calendar__month-view__days__day--weekend {
     color: inherit !important;
+}
+
+.react-calendar__navigation__arrow, .react-calendar__navigation__label {
+    padding: 0;
+    color: var(--primary);
 }
 
 /* WYSIWYG */
