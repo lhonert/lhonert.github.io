@@ -11,6 +11,7 @@ import Settings from './pages/settings';
 import { ThemeProvider } from './context/themeContext';
 import { JournalProvider } from './context/journalContext';
 import NewEntry from './pages/add-new-entry';
+import EditEntry from './pages/edit-entry';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       {
         path: "/new",
         element: <NewEntry />
-      }
+      },
+      {
+        path: "/edit/:id",
+        element: <EditEntry />
+      },
     ]
   },
 ]);

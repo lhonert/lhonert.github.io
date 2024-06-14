@@ -1,6 +1,8 @@
 import moment from "moment";
 import { useTheme } from "../../context/themeContext";
 import { useEffect } from "react";
+import { Edit } from "../icons";
+import { Link } from "react-router-dom";
 
 const Entry = (data) => {
 
@@ -62,6 +64,9 @@ const Entry = (data) => {
 
     return (
         <div className={`item-card entry ${outline ? 'outline' : 'no-outline'}`}>
+            <div className="edit-entry">
+                <Link to={`/edit/${entry.id}`}><Edit /></Link>
+            </div>
             <div id={`${entry.id}-${createdAt.format('MMM-DD')}`} className='content'></div>
         </div>
     )

@@ -16,7 +16,7 @@ const NewEntry = () => {
 
     useEffect(() => {
         const editor = new EditorJS({
-            holder: 'Editor',
+            holder: 'CreateMode',
             data: {
                 blocks: [
                     {
@@ -42,7 +42,7 @@ const NewEntry = () => {
             editor.save().then((output) => {
 
                 let data = {
-                    id: Math.random(),
+                    id: moment().unix(),
                     blocks: output.blocks,
                     time: moment(output.time).toISOString(),
                     createdAt: moment(output.time).toISOString()
@@ -59,6 +59,13 @@ const NewEntry = () => {
 
         document.querySelector('#submit').addEventListener('click', SaveEntry)
 
+        // Clean up function
+        return () => {
+            if (editor.current) {
+                editor.current.destroy();
+            }
+        };
+
     }, [])
 
     return (
@@ -71,7 +78,7 @@ const NewEntry = () => {
                 <button id='submit' style={{ flex: '0 1 30%' }}>Save</button>
             </div>
 
-            <div id='Editor'></div>
+            <div id='CreateMode'></div>
         </>
     )
 

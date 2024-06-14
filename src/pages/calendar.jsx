@@ -2,12 +2,10 @@ import moment from "moment";
 import Calendar from "react-calendar";
 import Entry from "../components/entry";
 import { useJournal } from "../context/journalContext";
-import { useTheme } from "../context/themeContext";
 
 const CalendarPage = () => {
 
-    const { outline } = useTheme(),
-        { journalEntries } = useJournal();
+    const { journalEntries } = useJournal();
 
     const group = journalEntries.reduce((group, entry) => {
 
@@ -21,7 +19,6 @@ const CalendarPage = () => {
         return group;
     }, {});
 
-    console.log(Object.entries(group))
     return (
         <>
             <Calendar />

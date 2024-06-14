@@ -148,7 +148,7 @@ h2.date::after {
 }
 
 .entry {
-    display: flex;
+    /* display: flex; */
     padding: 1em;
     gap: 5px;
 }
@@ -161,6 +161,16 @@ h2.date::after {
 .entry h6,
 .entry p {
     margin: 10px 0
+}
+
+.entry .edit-entry {
+    position: relative;
+}
+
+.entry .edit-entry svg.edit {
+    position: absolute;
+    right: 0;   
+    z-index: 1;
 }
 
 .entry .side {
