@@ -147,26 +147,27 @@ html, body {
 
 .entry .side {
     width: 100%;
-    flex: 5%;
+    flex: 2%;
 }
 
 .entry .content {
-    flex: 95%;
+    flex: 98%;
     max-width: 100%;
 }
 
 .entry .icon {
     background: var(--primary);
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin: 10px;
+    margin-top: 13px;
 }
 
 .entry:not(:last-child) .line {
     width: 1px;
     background: var(--primary);
-    height: calc(100% - 37px);
+    height: calc(100% - 1.5em);
     margin: 0 auto;
 }
 
@@ -180,8 +181,14 @@ html, body {
 }
 
 .entry-image {
-    width: 100%;
-    border-radius: 20px;
+    width: calc(100% - 30px);
+    display: block;           
+    height: auto;             
+    border: 5px solid white;  
+    padding: 5px;            
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);  
+    margin: 20px auto;        
+    background-color: white;
 }
 
 .flex {
