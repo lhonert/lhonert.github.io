@@ -24,7 +24,7 @@ const CalendarPage = () => {
     console.log(Object.entries(group))
     return (
         <>
-            {/* <Calendar /> */}
+            <Calendar />
 
             {Object.entries(group).map(item => {
 
