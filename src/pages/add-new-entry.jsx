@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Header from '@editorjs/header';
 import SimpleImage from "@editorjs/simple-image";
 import toast from "react-hot-toast";
+import Sticker from "../components/sticker";
 
 const NewEntry = () => {
 
@@ -77,6 +78,7 @@ const NewEntry = () => {
                 </div>
                 <button id='submit' style={{ flex: '0 1 30%' }}>Save</button>
             </div>
+            <Sticker />
 
             <div id='CreateMode'></div>
         </>

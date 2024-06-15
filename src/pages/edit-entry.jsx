@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Header from '@editorjs/header';
 import SimpleImage from "@editorjs/simple-image";
 import toast from "react-hot-toast";
+import Sticker from "../components/sticker";
 
 const EditEntry = () => {
 
@@ -81,7 +82,7 @@ const EditEntry = () => {
                 <p id='delete' style={{ textDecoration: 'underline' }}>Delete</p>
                 <button id='submit' style={{ flex: '0 1 30%' }}>Save</button>
             </div>
-
+            <Sticker />
             <div id='EditMode'></div>
         </>
     )
