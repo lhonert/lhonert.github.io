@@ -41,8 +41,6 @@ const Sticker = () => {
                 React.createElement("button", {
                     className: "custom-button",
                     onClick: (e) => {
-                        console.log('dasd')
-                        e.preventDefault()
                         e.stopPropagation()
                         deleteSticker()
                     }
@@ -73,7 +71,6 @@ const Sticker = () => {
 
     useEffect(() => {
         const selecto = new Selecto({
-            // container: containerRef.current,
             container: containerRef.current,
             selectableTargets: ['.target'],
             selectByClick: true
@@ -150,7 +147,7 @@ const Sticker = () => {
 
     return (
         <div>
-            <button onClick={addSticker} style={{ position: 'relative', zIndex: 10 }}>Add Sticker</button>
+            <button onClick={addSticker} style={{ position: 'relative', zIndex: 10 }}>Add random Sticker</button>
             <div ref={containerRef} className="sticker-container selecto-area"></div>
         </div>
     );
