@@ -71,7 +71,7 @@ const NewEntry = () => {
 
     return (
         <>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative', zIndex: 10 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div>
                     <p style={{ margin: 0 }}>Today</p>
                     <h2 style={{ margin: 0 }}>{moment().format('MMMM DD, YYYY')}</h2>

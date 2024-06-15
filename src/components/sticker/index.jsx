@@ -147,7 +147,7 @@ const Sticker = () => {
 
     return (
         <div>
-            <button onClick={addSticker} style={{ position: 'relative', zIndex: 10 }}>Add random Sticker</button>
+            <button onClick={addSticker}>Add random Sticker</button>
             <div ref={containerRef} className="sticker-container selecto-area"></div>
         </div>
     );
