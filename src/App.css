@@ -289,13 +289,13 @@ h2.date::after {
     display: none;
 }
 
-.sticker-container {
+/* .sticker-container {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-}
+} */
 
 button.custom-button {
     height: 20px;
