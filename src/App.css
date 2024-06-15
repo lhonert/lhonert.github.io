@@ -37,7 +37,7 @@
 }
 
 .no-outline {
-    box-shadow: 3px 5px 6px -4px rgba(0,0,0,0.1)
+    box-shadow: 2px 4px 10px -6px #3a302d87
 }
 
 p, a, span, h1, h2, h3, h4, h5, h6 {
@@ -148,6 +148,7 @@ h2.date::after {
 }
 
 .entry {
+    padding: 1em;
     gap: 5px;
 }
 

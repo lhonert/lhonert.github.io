@@ -63,7 +63,7 @@ const Entry = (data) => {
     }, [])
 
     return (
-        <div className={'entry'}>
+        <div className={`item-card entry ${outline ? 'outline' : 'no-outline'}`}>
             <div className="edit-entry">
                 <Link to={`/edit/${entry.id}`}><Edit /></Link>
             </div>

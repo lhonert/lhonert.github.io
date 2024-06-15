@@ -32,7 +32,9 @@ const CalendarPage = () => {
                     <>
                         <h2 className="date">{date}</h2>
                         {entries.map(entry => {
-                            return <Entry data={entry} />
+                            return (
+                                <Entry data={entry} />
+                            )
                         })}
 
                     </>
