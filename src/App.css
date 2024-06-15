@@ -148,8 +148,6 @@ h2.date::after {
 }
 
 .entry {
-    /* display: flex; */
-    padding: 1em;
     gap: 5px;
 }
 
