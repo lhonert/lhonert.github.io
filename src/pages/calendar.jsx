@@ -31,6 +31,7 @@ const CalendarPage = () => {
                 return (
                     <>
                         <h2 className="date">{date}</h2>
+                        <p>{moment(entries[0].createdAt).format('ddd')}</p>
                         {entries.map(entry => {
                             return (
                                 <Entry data={entry} />

@@ -8,7 +8,7 @@ import LTPH3 from '../../assets/img/11.png';
 import LTPH4 from '../../assets/img/15.png';
 
 const Sticker = () => {
-    const containerRef = useRef(null);
+    const containerRef = document.body;
     const moveableRef = useRef(null);
     const selectoRef = useRef(null);
     const targetsRef = useRef([]);
@@ -40,7 +40,8 @@ const Sticker = () => {
             }, [
                 React.createElement("button", {
                     className: "custom-button",
-                    onClick: () => {
+                    onClick: (e) => {
+                        e.stopPropagation()
                         deleteSticker()
                     }
                 }, ['x'])
@@ -49,8 +50,6 @@ const Sticker = () => {
     };
 
     const deleteSticker = () => {
-
-        console.log(moveableRef.current)
 
         if (moveableRef.current) {
 
@@ -71,10 +70,8 @@ const Sticker = () => {
 
 
     useEffect(() => {
-        const container = containerRef.current;
-
         const selecto = new Selecto({
-            container: container,
+            // container: containerRef,
             selectableTargets: ['.target'],
             selectByClick: true
         });
@@ -86,6 +83,9 @@ const Sticker = () => {
             draggable: true,
             resizable: true,
             rotatable: true,
+            pinchable: true,
+            selectFromInside: true,
+            continueSelect: true,
             hideDefaultLines: false,
             ables: [Editable],
             props: { editable: true }
