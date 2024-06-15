@@ -8,7 +8,7 @@ import LTPH3 from '../../assets/img/11.png';
 import LTPH4 from '../../assets/img/15.png';
 
 const Sticker = () => {
-    const containerRef = document.body;
+    const containerRef = useRef(null);
     const moveableRef = useRef(null);
     const selectoRef = useRef(null);
     const targetsRef = useRef([]);
@@ -41,6 +41,8 @@ const Sticker = () => {
                 React.createElement("button", {
                     className: "custom-button",
                     onClick: (e) => {
+                        console.log('dasd')
+                        e.preventDefault()
                         e.stopPropagation()
                         deleteSticker()
                     }
@@ -71,7 +73,8 @@ const Sticker = () => {
 
     useEffect(() => {
         const selecto = new Selecto({
-            // container: containerRef,
+            // container: containerRef.current,
+            container: containerRef.current,
             selectableTargets: ['.target'],
             selectByClick: true
         });
@@ -99,6 +102,10 @@ const Sticker = () => {
             moveable.target = selected;
             moveable.updateRect();
         });
+
+        selecto.on('selectEnd', e => {
+            console.log(e.inputEvent.target)
+        })
 
         selecto.on('dragStart', (e) => {
             const target = e.inputEvent.target;
@@ -143,7 +150,7 @@ const Sticker = () => {
 
     return (
         <div>
-            <button onClick={addSticker}>Add Sticker</button>
+            <button onClick={addSticker} style={{ position: 'relative', zIndex: 10 }}>Add Sticker</button>
             <div ref={containerRef} className="sticker-container selecto-area"></div>
         </div>
     );
